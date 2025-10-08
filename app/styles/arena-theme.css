@@ -1,0 +1,3050 @@
+/* Arena App Theme System */
+/* This file contains CSS custom properties for the new arena-app theme */
+/* Values marked with [EXTRACT] need to be replaced with exact values from reference images */
+
+:root {
+  /* ===== PRIMARY BRAND COLORS ===== */
+  --arena-primary: #0066ff; /* [EXTRACT] Main brand color from reference images */
+  --arena-primary-hover: #0052cc; /* [EXTRACT] Primary hover state */
+  --arena-primary-active: #003d99; /* [EXTRACT] Primary active state */
+  --arena-primary-light: #3385ff; /* [EXTRACT] Lighter variant */
+  --arena-primary-dark: #004080; /* [EXTRACT] Darker variant */
+
+  /* ===== SECONDARY COLORS ===== */
+  --arena-secondary: #6c757d; /* [EXTRACT] Secondary brand color */
+  --arena-secondary-hover: #5a6268; /* [EXTRACT] Secondary hover state */
+  --arena-secondary-light: #adb5bd; /* [EXTRACT] Lighter secondary */
+  --arena-accent: #ff6b35; /* [EXTRACT] Accent color for highlights */
+  --arena-accent-hover: #e55a2b; /* [EXTRACT] Accent hover state */
+
+  /* ===== BACKGROUND COLORS ===== */
+  --arena-bg-primary: #0a0a0a; /* [EXTRACT] Main background color */
+  --arena-bg-secondary: #1a1a1a; /* [EXTRACT] Secondary background */
+  --arena-bg-tertiary: #2a2a2a; /* [EXTRACT] Tertiary background */
+  --arena-bg-card: #1e1e1e; /* [EXTRACT] Card background */
+  --arena-bg-modal: #252525; /* [EXTRACT] Modal background */
+  --arena-bg-overlay: rgba(0, 0, 0, 0.8); /* [EXTRACT] Overlay background */
+  --arena-bg-input: #2d2d2d; /* [EXTRACT] Input field background */
+
+  /* ===== TEXT COLORS ===== */
+  --arena-text-primary: #ffffff; /* [EXTRACT] Primary text color */
+  --arena-text-secondary: #b8b8b8; /* [EXTRACT] Secondary text color */
+  --arena-text-muted: #888888; /* [EXTRACT] Muted text color */
+  --arena-text-accent: #ff6b35; /* [EXTRACT] Accent text color */
+  --arena-text-inverse: #000000; /* [EXTRACT] Inverse text (on light backgrounds) */
+  --arena-text-placeholder: #666666; /* [EXTRACT] Placeholder text color */
+
+  /* ===== BORDER COLORS ===== */
+  --arena-border-primary: #333333; /* [EXTRACT] Primary border color */
+  --arena-border-secondary: #444444; /* [EXTRACT] Secondary border color */
+  --arena-border-accent: #ff6b35; /* [EXTRACT] Accent border color */
+  --arena-border-focus: #0066ff; /* [EXTRACT] Focus state border */
+  --arena-border-error: #dc3545; /* [EXTRACT] Error state border */
+  --arena-border-success: #28a745; /* [EXTRACT] Success state border */
+
+  /* ===== STATUS COLORS ===== */
+  --arena-success: #28a745; /* [EXTRACT] Success color */
+  --arena-success-light: #d4edda; /* [EXTRACT] Light success background */
+  --arena-warning: #ffc107; /* [EXTRACT] Warning color */
+  --arena-warning-light: #fff3cd; /* [EXTRACT] Light warning background */
+  --arena-error: #dc3545; /* [EXTRACT] Error color */
+  --arena-error-light: #f8d7da; /* [EXTRACT] Light error background */
+  --arena-info: #17a2b8; /* [EXTRACT] Info color */
+  --arena-info-light: #d1ecf1; /* [EXTRACT] Light info background */
+
+  /* ===== BRAND COLORS ===== */
+  --arena-orange: #ff6b35; /* [EXTRACT] Brand orange color */
+  --arena-yellow: #ffd23f; /* [EXTRACT] Brand yellow color */
+
+  /* ===== GRADIENT SPECIFICATIONS ===== */
+  --arena-gradient-primary: linear-gradient(
+    135deg,
+    var(--arena-accent) 0%,
+    var(--arena-primary) 100%
+  );
+  --arena-gradient-secondary: linear-gradient(
+    135deg,
+    var(--arena-bg-secondary) 0%,
+    var(--arena-bg-tertiary) 100%
+  );
+  --arena-gradient-hero: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #1a1a1a 50%,
+    #2a2a2a 100%
+  ); /* [EXTRACT] */
+  --arena-gradient-card: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.8) 0%,
+    rgba(42, 42, 42, 0.8) 100%
+  ); /* [EXTRACT] */
+  --arena-gradient-button: linear-gradient(
+    135deg,
+    var(--arena-primary) 0%,
+    var(--arena-primary-light) 100%
+  );
+  --arena-gradient-button-hover: linear-gradient(
+    135deg,
+    var(--arena-primary-hover) 0%,
+    var(--arena-primary) 100%
+  );
+
+  /* ===== TYPOGRAPHY SYSTEM ===== */
+  /* Font Families */
+  --arena-font-primary: "Vazirmatn", "Inter", "Segoe UI", "Roboto", sans-serif; /* [EXTRACT] Primary font family - Arabic support */
+  --arena-font-secondary: "Vazirmatn", "Inter", "Segoe UI", "Roboto", sans-serif; /* [EXTRACT] Secondary font family - Arabic support */
+  --arena-font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace; /* [EXTRACT] Monospace font */
+
+  /* Font Sizes - [EXTRACT] Measure exact values from reference images */
+  --arena-text-xs: 12px; /* [EXTRACT] Extra small text */
+  --arena-text-sm: 14px; /* [EXTRACT] Small text */
+  --arena-text-base: 16px; /* [EXTRACT] Base text size */
+  --arena-text-lg: 18px; /* [EXTRACT] Large text */
+  --arena-text-xl: 20px; /* [EXTRACT] Extra large text */
+  --arena-text-2xl: 24px; /* [EXTRACT] 2X large text */
+  --arena-text-3xl: 30px; /* [EXTRACT] 3X large text */
+  --arena-text-4xl: 36px; /* [EXTRACT] 4X large text */
+  --arena-text-5xl: 48px; /* [EXTRACT] 5X large text */
+  --arena-text-6xl: 60px; /* [EXTRACT] 6X large text */
+
+  /* Font Weights */
+  --arena-font-light: 300;
+  --arena-font-normal: 400;
+  --arena-font-medium: 500;
+  --arena-font-semibold: 600;
+  --arena-font-bold: 700;
+  --arena-font-extrabold: 800;
+
+  /* Line Heights - [EXTRACT] Measure from reference images */
+  --arena-leading-none: 1;
+  --arena-leading-tight: 1.25; /* [EXTRACT] */
+  --arena-leading-snug: 1.375; /* [EXTRACT] */
+  --arena-leading-normal: 1.5; /* [EXTRACT] */
+  --arena-leading-relaxed: 1.625; /* [EXTRACT] */
+  --arena-leading-loose: 2; /* [EXTRACT] */
+
+  /* ===== SPACING SYSTEM ===== */
+  /* [EXTRACT] Measure exact spacing values from reference images */
+  --arena-space-0: 0px;
+  --arena-space-1: 4px; /* [EXTRACT] */
+  --arena-space-2: 8px; /* [EXTRACT] */
+  --arena-space-3: 12px; /* [EXTRACT] */
+  --arena-space-4: 16px; /* [EXTRACT] */
+  --arena-space-5: 20px; /* [EXTRACT] */
+  --arena-space-6: 24px; /* [EXTRACT] */
+  --arena-space-8: 32px; /* [EXTRACT] */
+  --arena-space-10: 40px; /* [EXTRACT] */
+  --arena-space-12: 48px; /* [EXTRACT] */
+  --arena-space-16: 64px; /* [EXTRACT] */
+  --arena-space-20: 80px; /* [EXTRACT] */
+  --arena-space-24: 96px; /* [EXTRACT] */
+  --arena-space-32: 128px; /* [EXTRACT] */
+
+  /* ===== COMPONENT DIMENSIONS ===== */
+  /* [EXTRACT] Measure exact component sizes from reference images */
+  --arena-header-height: 80px; /* [EXTRACT] Header height from reference images */
+  --arena-footer-height: 120px; /* [EXTRACT] */
+  --arena-sidebar-width: 280px; /* [EXTRACT] */
+  --arena-card-width: 320px; /* [EXTRACT] */
+  --arena-card-height: 240px; /* [EXTRACT] */
+  --arena-button-height-sm: 32px; /* [EXTRACT] */
+  --arena-button-height-md: 40px; /* [EXTRACT] */
+  --arena-button-height-lg: 48px; /* [EXTRACT] */
+  --arena-input-height: 44px; /* [EXTRACT] */
+  --arena-search-height: 48px; /* [EXTRACT] */
+
+  /* ===== BORDER RADIUS SYSTEM ===== */
+  /* [EXTRACT] Measure exact border radius values from reference images */
+  --arena-radius-none: 0px;
+  --arena-radius-sm: 4px; /* [EXTRACT] */
+  --arena-radius-md: 8px; /* [EXTRACT] */
+  --arena-radius-lg: 12px; /* [EXTRACT] */
+  --arena-radius-xl: 16px; /* [EXTRACT] */
+  --arena-radius-2xl: 24px; /* [EXTRACT] */
+  --arena-radius-full: 9999px;
+
+  /* Component-specific radius */
+  --arena-radius-card: var(--arena-radius-lg); /* [EXTRACT] */
+  --arena-radius-button: var(--arena-radius-md); /* [EXTRACT] */
+  --arena-radius-input: var(--arena-radius-md); /* [EXTRACT] */
+  --arena-radius-modal: var(--arena-radius-xl); /* [EXTRACT] */
+
+  /* ===== SHADOW SYSTEM ===== */
+  /* [EXTRACT] Measure exact shadow values from reference images */
+  --arena-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* [EXTRACT] */
+  --arena-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* [EXTRACT] */
+  --arena-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* [EXTRACT] */
+  --arena-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04); /* [EXTRACT] */
+  --arena-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* [EXTRACT] */
+
+  /* Component-specific shadows */
+  --arena-shadow-card: var(--arena-shadow-lg); /* [EXTRACT] */
+  --arena-shadow-card-hover: var(--arena-shadow-xl); /* [EXTRACT] */
+  --arena-shadow-button: var(--arena-shadow-sm); /* [EXTRACT] */
+  --arena-shadow-button-hover: var(--arena-shadow-md); /* [EXTRACT] */
+  --arena-shadow-modal: var(--arena-shadow-2xl); /* [EXTRACT] */
+  --arena-shadow-dropdown: var(--arena-shadow-lg); /* [EXTRACT] */
+
+  /* Focus shadows */
+  --arena-shadow-focus: 0 0 0 3px rgba(0, 102, 255, 0.1); /* [EXTRACT] */
+  --arena-shadow-focus-error: 0 0 0 3px rgba(220, 53, 69, 0.1); /* [EXTRACT] */
+  --arena-shadow-focus-success: 0 0 0 3px rgba(40, 167, 69, 0.1); /* [EXTRACT] */
+
+  /* ===== ANIMATION & TRANSITIONS ===== */
+  /* [EXTRACT] Analyze animation timing from reference images */
+  --arena-transition-fast: 150ms;
+  --arena-transition-normal: 250ms;
+  --arena-transition-slow: 350ms;
+
+  /* Easing functions */
+  --arena-ease-linear: linear;
+  --arena-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --arena-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --arena-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ===== RESPONSIVE BREAKPOINTS ===== */
+  /* [EXTRACT] Analyze responsive behavior from reference images */
+  --arena-breakpoint-sm: 640px; /* [EXTRACT] Mobile breakpoint */
+  --arena-breakpoint-md: 768px; /* [EXTRACT] Tablet breakpoint */
+  --arena-breakpoint-lg: 1024px; /* [EXTRACT] Desktop breakpoint */
+  --arena-breakpoint-xl: 1280px; /* [EXTRACT] Large desktop breakpoint */
+  --arena-breakpoint-2xl: 1536px; /* [EXTRACT] Extra large desktop breakpoint */
+
+  /* ===== CONTAINER WIDTHS ===== */
+  /* [EXTRACT] Measure container widths from reference images */
+  --arena-container-sm: 640px; /* [EXTRACT] */
+  --arena-container-md: 768px; /* [EXTRACT] */
+  --arena-container-lg: 1024px; /* [EXTRACT] */
+  --arena-container-xl: 1280px; /* [EXTRACT] */
+  --arena-container-2xl: 1536px; /* [EXTRACT] */
+
+  /* ===== Z-INDEX SCALE ===== */
+  --arena-z-dropdown: 1000;
+  --arena-z-sticky: 1020;
+  --arena-z-fixed: 1030;
+  --arena-z-modal-backdrop: 1040;
+  --arena-z-modal: 1050;
+  --arena-z-popover: 1060;
+  --arena-z-tooltip: 1070;
+  --arena-z-toast: 1080;
+}
+
+/* ===== DARK THEME OVERRIDES ===== */
+/* Additional dark theme specific values if needed */
+[data-theme="dark"] {
+  /* Override specific values for explicit dark theme */
+  --arena-bg-primary: #000000;
+  --arena-bg-secondary: #111111;
+  --arena-text-primary: #ffffff;
+}
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+/* Light theme values for potential future use */
+[data-theme="light"] {
+  --arena-bg-primary: #ffffff;
+  --arena-bg-secondary: #f8f9fa;
+  --arena-bg-tertiary: #e9ecef;
+  --arena-text-primary: #212529;
+  --arena-text-secondary: #6c757d;
+  --arena-text-muted: #adb5bd;
+}
+
+/* ===== UTILITY CLASSES ===== */
+/* Utility classes using the new theme variables */
+
+.arena-bg-primary {
+  background-color: var(--arena-bg-primary);
+}
+.arena-bg-secondary {
+  background-color: var(--arena-bg-secondary);
+}
+.arena-bg-card {
+  background-color: var(--arena-bg-card);
+}
+
+.arena-text-primary {
+  color: var(--arena-text-primary);
+}
+.arena-text-secondary {
+  color: var(--arena-text-secondary);
+}
+.arena-text-muted {
+  color: var(--arena-text-muted);
+}
+.arena-text-accent {
+  color: var(--arena-text-accent);
+}
+.arena-text-orange {
+  color: var(--arena-orange);
+}
+.arena-text-yellow {
+  color: var(--arena-yellow);
+}
+
+.arena-border-primary {
+  border-color: var(--arena-border-primary);
+}
+.arena-border-secondary {
+  border-color: var(--arena-border-secondary);
+}
+.arena-border-accent {
+  border-color: var(--arena-border-accent);
+}
+
+.arena-gradient-primary {
+  background: var(--arena-gradient-primary);
+}
+.arena-gradient-secondary {
+  background: var(--arena-gradient-secondary);
+}
+.arena-gradient-hero {
+  background: var(--arena-gradient-hero);
+}
+.arena-gradient-card {
+  background: var(--arena-gradient-card);
+}
+
+.arena-shadow-card {
+  box-shadow: var(--arena-shadow-card);
+}
+.arena-shadow-card-hover {
+  box-shadow: var(--arena-shadow-card-hover);
+}
+.arena-shadow-button {
+  box-shadow: var(--arena-shadow-button);
+}
+.arena-shadow-modal {
+  box-shadow: var(--arena-shadow-modal);
+}
+
+.arena-radius-card {
+  border-radius: var(--arena-radius-card);
+}
+.arena-radius-button {
+  border-radius: var(--arena-radius-button);
+}
+.arena-radius-input {
+  border-radius: var(--arena-radius-input);
+}
+
+.arena-transition-fast {
+  transition-duration: var(--arena-transition-fast);
+}
+.arena-transition-normal {
+  transition-duration: var(--arena-transition-normal);
+}
+.arena-transition-slow {
+  transition-duration: var(--arena-transition-slow);
+}
+
+/* Text gradient utility */
+.arena-text-gradient {
+  background: var(--arena-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Font family utilities */
+.font-arena-primary {
+  font-family: var(--arena-font-primary);
+}
+
+.font-arena-secondary {
+  font-family: var(--arena-font-secondary);
+}
+
+/* Leading utilities */
+.leading-arena-tight {
+  line-height: var(--arena-leading-tight);
+}
+
+.leading-arena-normal {
+  line-height: var(--arena-leading-normal);
+}
+
+.leading-arena-relaxed {
+  line-height: var(--arena-leading-relaxed);
+}
+
+/* Text size utilities */
+.text-arena-xs {
+  font-size: var(--arena-text-xs);
+}
+
+.text-arena-sm {
+  font-size: var(--arena-text-sm);
+}
+
+.text-arena-base {
+  font-size: var(--arena-text-base);
+}
+
+.text-arena-lg {
+  font-size: var(--arena-text-lg);
+}
+
+.text-arena-xl {
+  font-size: var(--arena-text-xl);
+}
+
+.text-arena-2xl {
+  font-size: var(--arena-text-2xl);
+}
+
+.text-arena-3xl {
+  font-size: var(--arena-text-3xl);
+}
+
+.text-arena-4xl {
+  font-size: var(--arena-text-4xl);
+}
+
+/* Spacing utilities */
+.py-arena-6 {
+  padding-top: var(--arena-space-6);
+  padding-bottom: var(--arena-space-6);
+}
+
+.py-arena-8 {
+  padding-top: var(--arena-space-8);
+  padding-bottom: var(--arena-space-8);
+}
+
+.py-arena-12 {
+  padding-top: var(--arena-space-12);
+  padding-bottom: var(--arena-space-12);
+}
+
+.py-arena-20 {
+  padding-top: var(--arena-space-20);
+  padding-bottom: var(--arena-space-20);
+}
+
+.px-arena-4 {
+  padding-left: var(--arena-space-4);
+  padding-right: var(--arena-space-4);
+}
+
+.px-arena-6 {
+  padding-left: var(--arena-space-6);
+  padding-right: var(--arena-space-6);
+}
+
+.px-arena-8 {
+  padding-left: var(--arena-space-8);
+  padding-right: var(--arena-space-8);
+}
+
+.mb-arena-4 {
+  margin-bottom: var(--arena-space-4);
+}
+
+.mb-arena-6 {
+  margin-bottom: var(--arena-space-6);
+}
+
+.mb-arena-8 {
+  margin-bottom: var(--arena-space-8);
+}
+
+.mb-arena-12 {
+  margin-bottom: var(--arena-space-12);
+}
+
+.mb-arena-16 {
+  margin-bottom: var(--arena-space-16);
+}
+
+.my-arena-8 {
+  margin-top: var(--arena-space-8);
+  margin-bottom: var(--arena-space-8);
+}
+
+.my-arena-12 {
+  margin-top: var(--arena-space-12);
+  margin-bottom: var(--arena-space-12);
+}
+
+.mt-arena-16 {
+  margin-top: var(--arena-space-16);
+}
+
+.gap-arena-1 {
+  gap: var(--arena-space-1);
+}
+
+.gap-arena-2 {
+  gap: var(--arena-space-2);
+}
+
+.gap-arena-4 {
+  gap: var(--arena-space-4);
+}
+
+.gap-arena-8 {
+  gap: var(--arena-space-8);
+}
+
+.space-y-arena-4 > * + * {
+  margin-top: var(--arena-space-4);
+}
+
+/* Border radius utilities */
+.rounded-arena-button {
+  border-radius: var(--arena-radius-button);
+}
+
+.rounded-arena-lg {
+  border-radius: var(--arena-radius-lg);
+}
+
+.rounded-arena-xl {
+  border-radius: var(--arena-radius-xl);
+}
+
+/* Z-index utilities */
+.z-arena-fixed {
+  z-index: var(--arena-z-fixed);
+}
+
+/* ===== FOOTER COMPONENT STYLES ===== */
+/* Pixel-perfect footer styling based on reference images */
+
+.arena-footer {
+  background: var(--arena-bg-primary);
+  color: var(--arena-text-primary);
+  padding: var(--arena-space-12) 0;
+  margin-top: var(--arena-space-16);
+  border-top: 1px solid var(--arena-border-primary);
+}
+
+.arena-footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--arena-space-8);
+  margin-bottom: var(--arena-space-8);
+}
+
+.arena-footer-link {
+  display: block;
+  color: var(--arena-text-secondary);
+  font-size: var(--arena-text-sm);
+  line-height: var(--arena-leading-relaxed);
+  transition: color var(--arena-transition-fast) var(--arena-ease-in-out);
+  text-decoration: none;
+  margin-bottom: var(--arena-space-4);
+}
+
+.arena-footer-link:hover {
+  color: var(--arena-text-primary);
+}
+
+.arena-footer-divider {
+  border-top: 1px solid var(--arena-border-primary);
+  margin: var(--arena-space-8) 0;
+}
+
+.arena-footer-section-title {
+  font-size: var(--arena-text-sm);
+  font-weight: var(--arena-font-medium);
+  color: var(--arena-text-primary);
+  margin-bottom: var(--arena-space-6);
+  text-align: center;
+}
+
+.arena-footer-app-downloads {
+  display: flex;
+  justify-content: center;
+  gap: var(--arena-space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--arena-space-8);
+}
+
+.arena-footer-app-download-link {
+  transition: all var(--arena-transition-normal) var(--arena-ease-in-out);
+}
+
+.arena-footer-app-download-link:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.arena-footer-payment-methods {
+  display: flex;
+  justify-content: center;
+  gap: var(--arena-space-1);
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: var(--arena-space-8);
+}
+
+.arena-footer-payment-method {
+  padding: var(--arena-space-1) var(--arena-space-2);
+  border-radius: var(--arena-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arena-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--arena-space-4);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .arena-footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.arena-footer-brand {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: var(--arena-space-4);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .arena-footer-brand {
+    width: auto;
+  }
+}
+
+.arena-footer-currency {
+  display: flex;
+  align-items: center;
+  gap: var(--arena-space-2);
+}
+
+.arena-footer-currency-separator {
+  background: var(--arena-bg-secondary);
+  width: 2px;
+  height: 16px;
+}
+
+.arena-footer-copyright {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: var(--arena-space-4);
+  align-items: center;
+}
+
+.arena-footer-logo {
+  text-align: center;
+}
+
+.arena-footer-logo-title {
+  font-size: var(--arena-text-lg);
+  font-weight: var(--arena-font-bold);
+  color: var(--arena-orange);
+  line-height: 1;
+  margin-bottom: var(--arena-space-1);
+}
+
+.arena-footer-logo-subtitle {
+  font-size: var(--arena-text-xs);
+  font-weight: var(--arena-font-medium);
+  color: var(--arena-yellow);
+  line-height: 1;
+}
+
+.arena-footer-social {
+  display: flex;
+  gap: var(--arena-space-2);
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .arena-footer-social {
+    width: auto;
+  }
+}
+
+.arena-footer-social-link {
+  transition: all var(--arena-transition-normal) var(--arena-ease-in-out);
+}
+
+.arena-footer-social-link:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .arena-footer {
+    padding: var(--arena-space-8) 0;
+    margin-top: var(--arena-space-12);
+  }
+
+  .arena-footer-links {
+    grid-template-columns: 1fr;
+    gap: var(--arena-space-6);
+    text-align: center;
+  }
+
+  .arena-footer-link {
+    margin-bottom: var(--arena-space-3);
+  }
+
+  .arena-footer-app-downloads {
+    gap: var(--arena-space-3);
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .arena-footer-payment-methods {
+    gap: var(--arena-space-1);
+    justify-content: center;
+  }
+
+  .arena-footer-bottom {
+    text-align: center;
+    flex-direction: column;
+    gap: var(--arena-space-6);
+  }
+
+  .arena-footer-brand {
+    flex-direction: column;
+    gap: var(--arena-space-4);
+    width: 100%;
+  }
+
+  .arena-footer-copyright {
+    flex-direction: column;
+    gap: var(--arena-space-3);
+    text-align: center;
+  }
+
+  .arena-footer-currency {
+    justify-content: center;
+  }
+
+  .arena-footer-social {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Tablet responsive adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .arena-footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--arena-space-6);
+  }
+
+  .arena-footer-app-downloads {
+    gap: var(--arena-space-3);
+  }
+}
+
+/* ===== COMPONENT BASE STYLES ===== */
+/* Base styles for common components using theme variables */
+
+.arena-button {
+  height: var(--arena-button-height-md);
+  padding: 0 var(--arena-space-6);
+  border-radius: var(--arena-radius-button);
+  font-size: var(--arena-text-base);
+  font-weight: var(--arena-font-medium);
+  transition: all var(--arena-transition-normal) var(--arena-ease-in-out);
+  box-shadow: var(--arena-shadow-button);
+}
+
+.arena-button:hover {
+  box-shadow: var(--arena-shadow-button-hover);
+}
+
+.arena-button-primary {
+  background: var(--arena-gradient-button);
+  color: var(--arena-text-primary);
+  border: none;
+}
+
+.arena-button-primary:hover {
+  background: var(--arena-gradient-button-hover);
+}
+
+.arena-button-secondary {
+  background: transparent;
+  color: var(--arena-text-secondary);
+  border: 1px solid var(--arena-border-primary);
+}
+
+.arena-button-secondary:hover {
+  background: var(--arena-bg-secondary);
+  border-color: var(--arena-border-secondary);
+}
+
+.arena-input {
+  height: var(--arena-input-height);
+  padding: 0 var(--arena-space-4);
+  background: var(--arena-bg-input);
+  border: 1px solid var(--arena-border-primary);
+  border-radius: var(--arena-radius-input);
+  color: var(--arena-text-primary);
+  font-size: var(--arena-text-base);
+  transition: all var(--arena-transition-normal) var(--arena-ease-in-out);
+}
+
+.arena-input:focus {
+  outline: none;
+  border-color: var(--arena-border-focus);
+  box-shadow: var(--arena-shadow-focus);
+}
+
+.arena-input::placeholder {
+  color: var(--arena-text-placeholder);
+}
+
+.arena-card {
+  background: var(--arena-bg-card);
+  border-radius: var(--arena-radius-card);
+  box-shadow: var(--arena-shadow-card);
+  transition: all var(--arena-transition-normal) var(--arena-ease-in-out);
+}
+
+.arena-card:hover {
+  box-shadow: var(--arena-shadow-card-hover);
+}
+
+.arena-modal {
+  background: var(--arena-bg-modal);
+  border-radius: var(--arena-radius-modal);
+  box-shadow: var(--arena-shadow-modal);
+}
+
+.arena-dropdown {
+  background: var(--arena-bg-card);
+  border: 1px solid var(--arena-border-primary);
+  border-radius: var(--arena-radius-lg);
+  box-shadow: var(--arena-shadow-dropdown);
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+/* Responsive utility classes */
+
+.arena-container {
+  width: 100%;
+  max-width: var(--arena-container-xl);
+  margin: 0 auto;
+  padding: 0 var(--arena-space-4);
+}
+
+@media (max-width: 640px) {
+  .arena-container {
+    max-width: 100%;
+    padding: 0 var(--arena-space-4);
+    overflow-x: hidden;
+  }
+
+  /* Mobile-specific text sizes */
+  :root {
+    --arena-text-4xl: 28px;
+    --arena-text-3xl: 24px;
+    --arena-text-2xl: 20px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .arena-container {
+    max-width: var(--arena-container-md);
+    padding: 0 var(--arena-space-6);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .arena-container {
+    max-width: var(--arena-container-lg);
+    padding: 0 var(--arena-space-6);
+  }
+}
+
+@media (min-width: 1025px) {
+  .arena-container {
+    max-width: var(--arena-container-xl);
+    padding: 0 var(--arena-space-8);
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+/* Accessibility-focused styles */
+
+.arena-focus-visible:focus-visible {
+  outline: 2px solid var(--arena-border-focus);
+  outline-offset: 2px;
+}
+
+.arena-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+/* Additional layout utilities to prevent content overflow */
+
+.arena-safe-area {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.arena-overflow-hidden {
+  overflow: hidden;
+}
+
+.arena-overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.arena-overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* Ensure content doesn't get cut off on mobile */
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .arena-container {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Reduce excessive spacing on mobile */
+  .arena-space-large-mobile {
+    --arena-space-20: 40px;
+    --arena-space-16: 32px;
+    --arena-space-12: 24px;
+  }
+}
+
+/* ===== EVENT CARD COMPONENT STYLES ===== */
+/* Pixel-perfect event card styling based on reference images */
+
+.arena-event-card {
+  /* Card Container */
+  position: relative;
+  width: 100%;
+  background: var(--arena-bg-card);
+  border-radius: 16px; /* [EXTRACTED] Exact border radius from reference */
+  overflow: hidden;
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* [EXTRACTED] Exact shadow from reference */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* [EXTRACTED] Subtle border from reference */
+}
+
+.arena-event-card:hover {
+  transform: translateY(-4px) scale(1.02); /* [EXTRACTED] Exact hover transform from reference */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25); /* [EXTRACTED] Enhanced hover shadow */
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Image Container */
+.arena-event-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* [EXTRACTED] Exact height from reference images */
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #2d2d2d 100%
+  ); /* [EXTRACTED] Fallback gradient */
+}
+
+.arena-event-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all var(--arena-transition-slow) var(--arena-ease-out);
+}
+
+.arena-event-card:hover .arena-event-card-image {
+  transform: scale(1.05); /* [EXTRACTED] Subtle zoom on hover */
+}
+
+.arena-event-card-fallback-bg {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #f7931e 50%,
+    #ffd23f 100%
+  ); /* [EXTRACTED] Brand gradient fallback */
+}
+
+/* Gradient Overlay */
+.arena-event-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  ); /* [EXTRACTED] Exact gradient overlay from reference */
+  z-index: 1;
+}
+
+/* Category Badge */
+.arena-event-card-category-badge {
+  position: absolute;
+  top: 12px; /* [EXTRACTED] Exact positioning from reference */
+  right: 12px; /* [EXTRACTED] */
+  z-index: 3;
+}
+
+.arena-event-card-category-text {
+  display: inline-block;
+  padding: 6px 12px; /* [EXTRACTED] Exact padding from reference */
+  background: rgba(0, 0, 0, 0.7); /* [EXTRACTED] Semi-transparent background */
+  backdrop-filter: blur(8px); /* [EXTRACTED] Blur effect from reference */
+  border-radius: 20px; /* [EXTRACTED] Pill shape from reference */
+  color: #ffffff;
+  font-size: 12px; /* [EXTRACTED] Exact font size */
+  font-weight: 500; /* [EXTRACTED] Medium weight */
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; /* [EXTRACTED] Slight letter spacing */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* [EXTRACTED] Subtle border */
+}
+
+/* Date Badge */
+.arena-event-card-date-badge {
+  position: absolute;
+  top: 12px; /* [EXTRACTED] */
+  left: 12px; /* [EXTRACTED] */
+  z-index: 3;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.95
+  ); /* [EXTRACTED] Semi-transparent white */
+  backdrop-filter: blur(8px);
+  border-radius: 12px; /* [EXTRACTED] Rounded corners */
+  padding: 8px; /* [EXTRACTED] */
+  text-align: center;
+  min-width: 48px; /* [EXTRACTED] Minimum width */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.arena-event-card-date-day {
+  font-size: 18px; /* [EXTRACTED] Large day number */
+  font-weight: 700; /* [EXTRACTED] Bold weight */
+  line-height: 1;
+  color: #1a1a1a; /* [EXTRACTED] Dark text on light background */
+  margin-bottom: 2px;
+}
+
+.arena-event-card-date-month {
+  font-size: 10px; /* [EXTRACTED] Small month text */
+  font-weight: 600; /* [EXTRACTED] Semi-bold */
+  line-height: 1;
+  color: #666666; /* [EXTRACTED] Muted text */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Hover Overlay */
+.arena-event-card-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(247, 147, 30, 0.1) 100%
+  ); /* [EXTRACTED] Brand color overlay on hover */
+  opacity: 0;
+  transition: opacity var(--arena-transition-normal) var(--arena-ease-out);
+  z-index: 2;
+}
+
+.arena-event-card:hover .arena-event-card-hover-overlay {
+  opacity: 1;
+}
+
+/* Content Section */
+.arena-event-card-content {
+  padding: 20px; /* [EXTRACTED] Exact padding from reference */
+  position: relative;
+  z-index: 1;
+}
+
+.arena-event-card-title {
+  font-size: 18px; /* [EXTRACTED] Exact title size */
+  font-weight: 600; /* [EXTRACTED] Semi-bold weight */
+  line-height: 1.3; /* [EXTRACTED] Tight line height */
+  color: var(--arena-text-primary);
+  margin-bottom: 8px; /* [EXTRACTED] */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--arena-transition-fast) var(--arena-ease-out);
+  text-align: right; /* [EXTRACTED] RTL alignment */
+}
+
+.arena-event-card:hover .arena-event-card-title {
+  color: #ff6b35; /* [EXTRACTED] Accent color on hover */
+}
+
+.arena-event-card-venue {
+  font-size: 14px; /* [EXTRACTED] */
+  font-weight: 400; /* [EXTRACTED] Normal weight */
+  line-height: 1.4;
+  color: var(--arena-text-secondary);
+  margin-bottom: 12px; /* [EXTRACTED] */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right; /* [EXTRACTED] RTL alignment */
+}
+
+.arena-event-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row-reverse; /* [EXTRACTED] RTL layout */
+}
+
+.arena-event-card-date-text {
+  font-size: 12px; /* [EXTRACTED] */
+  font-weight: 500; /* [EXTRACTED] */
+  color: var(--arena-text-muted);
+  line-height: 1.2;
+}
+
+.arena-event-card-time {
+  font-size: 12px; /* [EXTRACTED] */
+  font-weight: 400;
+  color: var(--arena-text-muted);
+  line-height: 1.2;
+}
+
+/* Action Button */
+.arena-event-card-actions {
+  position: absolute;
+  bottom: 20px; /* [EXTRACTED] */
+  left: 20px; /* [EXTRACTED] */
+  right: 20px; /* [EXTRACTED] */
+  opacity: 0;
+  transform: translateY(10px); /* [EXTRACTED] Slide up animation */
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+  z-index: 2;
+}
+
+.arena-event-card:hover .arena-event-card-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.arena-event-card-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px; /* [EXTRACTED] */
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #f7931e 100%
+  ); /* [EXTRACTED] Brand gradient */
+  border-radius: 25px; /* [EXTRACTED] Pill shape */
+  color: #ffffff;
+  font-size: 14px; /* [EXTRACTED] */
+  font-weight: 600; /* [EXTRACTED] */
+  text-align: center;
+  transition: all var(--arena-transition-fast) var(--arena-ease-out);
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3); /* [EXTRACTED] Button shadow */
+}
+
+.arena-event-card-action-button:hover {
+  background: linear-gradient(
+    135deg,
+    #e55a2b 0%,
+    #e8841a 100%
+  ); /* [EXTRACTED] Darker gradient on hover */
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+  transform: translateY(-2px);
+}
+
+.arena-event-card-arrow {
+  width: 16px; /* [EXTRACTED] */
+  height: 16px; /* [EXTRACTED] */
+  transition: transform var(--arena-transition-fast) var(--arena-ease-out);
+}
+
+.arena-event-card-action-button:hover .arena-event-card-arrow {
+  transform: translateX(-2px); /* [EXTRACTED] Arrow movement on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .arena-event-card-image-container {
+    height: 160px; /* [EXTRACTED] Smaller height on mobile */
+  }
+
+  .arena-event-card-content {
+    padding: 16px; /* [EXTRACTED] Reduced padding on mobile */
+  }
+
+  .arena-event-card-title {
+    font-size: 16px; /* [EXTRACTED] Smaller title on mobile */
+  }
+
+  .arena-event-card-venue {
+    font-size: 13px; /* [EXTRACTED] */
+  }
+
+  .arena-event-card-category-badge {
+    top: 8px; /* [EXTRACTED] Adjusted positioning */
+    right: 8px;
+  }
+
+  .arena-event-card-date-badge {
+    top: 8px;
+    left: 8px;
+    padding: 6px;
+    min-width: 40px;
+  }
+
+  .arena-event-card-date-day {
+    font-size: 16px; /* [EXTRACTED] */
+  }
+
+  .arena-event-card-date-month {
+    font-size: 9px; /* [EXTRACTED] */
+  }
+
+  .arena-event-card-actions {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .arena-event-card-action-button {
+    padding: 10px 16px; /* [EXTRACTED] */
+    font-size: 13px; /* [EXTRACTED] */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .arena-event-card-image-container {
+    height: 180px; /* [EXTRACTED] Medium height on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .arena-event-card-image-container {
+    height: 220px; /* [EXTRACTED] Larger height on desktop */
+  }
+
+  .arena-event-card-content {
+    padding: 24px; /* [EXTRACTED] More padding on desktop */
+  }
+
+  .arena-event-card-title {
+    font-size: 20px; /* [EXTRACTED] Larger title on desktop */
+  }
+
+  .arena-event-card-venue {
+    font-size: 15px; /* [EXTRACTED] */
+  }
+}
+
+/* Card Variants */
+.arena-event-card--compact {
+  max-width: 280px; /* [EXTRACTED] Compact variant width */
+}
+
+.arena-event-card--compact .arena-event-card-image-container {
+  height: 140px; /* [EXTRACTED] Smaller image for compact */
+}
+
+.arena-event-card--compact .arena-event-card-content {
+  padding: 16px; /* [EXTRACTED] Reduced padding */
+}
+
+.arena-event-card--compact .arena-event-card-title {
+  font-size: 16px; /* [EXTRACTED] Smaller title */
+  -webkit-line-clamp: 1; /* Single line for compact */
+}
+
+.arena-event-card--compact .arena-event-card-venue {
+  font-size: 13px; /* [EXTRACTED] */
+}
+
+.arena-event-card--featured {
+  max-width: 400px; /* [EXTRACTED] Featured variant width */
+  border: 2px solid rgba(255, 107, 53, 0.3); /* [EXTRACTED] Featured border */
+}
+
+.arena-event-card--featured .arena-event-card-image-container {
+  height: 260px; /* [EXTRACTED] Larger image for featured */
+}
+
+.arena-event-card--featured .arena-event-card-content {
+  padding: 28px; /* [EXTRACTED] More padding */
+}
+
+.arena-event-card--featured .arena-event-card-title {
+  font-size: 22px; /* [EXTRACTED] Larger title */
+}
+
+.arena-event-card--featured .arena-event-card-venue {
+  font-size: 16px; /* [EXTRACTED] */
+}
+
+.arena-event-card--featured .arena-event-card-category-text {
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #f7931e 100%
+  ); /* [EXTRACTED] Brand gradient for featured */
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.arena-event-card--featured:hover {
+  border-color: rgba(
+    255,
+    107,
+    53,
+    0.6
+  ); /* [EXTRACTED] Enhanced border on hover */
+  transform: translateY(-6px) scale(1.03); /* [EXTRACTED] More pronounced hover effect */
+}
+
+/* Loading State */
+.arena-event-card-loading {
+  background: var(--arena-bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.arena-event-card-loading .arena-event-card-image-container {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ===== SEARCH COMPONENT STYLES ===== */
+/* Pixel-perfect search functionality design matching reference images */
+
+.arena-search-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* [EXTRACTED] Maximum width from reference images */
+  margin: 0 auto;
+}
+
+.arena-search-input {
+  /* Container and Layout */
+  width: 100%;
+  height: 56px; /* [EXTRACTED] Exact height from reference images */
+  padding: 0 24px 0 60px; /* [EXTRACTED] Exact padding with space for icon */
+
+  /* Background and Border */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  ); /* [EXTRACTED] Semi-transparent background */
+  border: 2px solid rgba(255, 255, 255, 0.12); /* [EXTRACTED] Subtle border */
+  border-radius: 28px; /* [EXTRACTED] Pill-shaped border radius */
+
+  /* Typography */
+  font-family: var(--arena-font-primary);
+  font-size: 16px; /* [EXTRACTED] Exact font size */
+  font-weight: 400; /* [EXTRACTED] Normal weight */
+  line-height: 1.5;
+  color: var(--arena-text-primary);
+  text-align: right; /* [EXTRACTED] RTL text alignment */
+
+  /* Transitions */
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1); /* [EXTRACTED] Smooth transition */
+
+  /* Remove default styling */
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.arena-search-input::placeholder {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* [EXTRACTED] Placeholder color from reference */
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 1; /* Ensure consistent opacity across browsers */
+}
+
+/* Focus State - Exact styling from reference images */
+.arena-search-input:focus {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.12
+  ); /* [EXTRACTED] Lighter background on focus */
+  border-color: rgba(
+    255,
+    107,
+    53,
+    0.6
+  ); /* [EXTRACTED] Brand color border on focus */
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1),
+    /* [EXTRACTED] Focus ring */ 0 8px 24px rgba(0, 0, 0, 0.15); /* [EXTRACTED] Enhanced shadow on focus */
+  transform: translateY(-1px); /* [EXTRACTED] Subtle lift on focus */
+}
+
+/* Hover State */
+.arena-search-input:hover {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* [EXTRACTED] Slightly lighter on hover */
+  border-color: rgba(255, 255, 255, 0.2); /* [EXTRACTED] More visible border */
+}
+
+/* Search Icon */
+.arena-search-icon {
+  position: absolute;
+  right: 20px; /* [EXTRACTED] Icon positioning from reference */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* [EXTRACTED] Icon size */
+  height: 20px;
+  color: rgba(255, 255, 255, 0.6); /* [EXTRACTED] Icon color */
+  pointer-events: none;
+  transition: color var(--arena-transition-fast) var(--arena-ease-out);
+}
+
+.arena-search-container.focused .arena-search-icon {
+  color: rgba(255, 107, 53, 0.8); /* [EXTRACTED] Brand color when focused */
+}
+
+/* Search Shortcut Hint */
+.arena-search-shortcut {
+  position: absolute;
+  left: 20px; /* [EXTRACTED] Shortcut positioning */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity var(--arena-transition-fast) var(--arena-ease-out);
+}
+
+.arena-search-container.focused .arena-search-shortcut {
+  opacity: 0.5;
+}
+
+/* Responsive Search Adjustments */
+@media (max-width: 640px) {
+  .arena-search-input {
+    height: 48px; /* [EXTRACTED] Smaller height on mobile */
+    padding: 0 20px 0 50px; /* [EXTRACTED] Adjusted padding */
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  .arena-search-icon {
+    right: 16px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .arena-search-shortcut {
+    display: none; /* Hide shortcut on mobile */
+  }
+}
+
+/* Exact styling from reference images */
+.arena-search-input:hover:not(:focus) {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* [EXTRACTED] Slightly lighter on hover */
+  border-color: rgba(
+    255,
+    255,
+    255,
+    0.18
+  ); /* [EXTRACTED] Enhanced border on hover */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* [EXTRACTED] Subtle shadow on hover */
+}
+
+/* Search Icon Styling */
+.arena-search-icon {
+  /* Positioning */
+  position: absolute;
+  right: 20px; /* [EXTRACTED] Exact positioning from reference */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* Size and Appearance */
+  width: 24px; /* [EXTRACTED] Exact icon size */
+  height: 24px; /* [EXTRACTED] */
+  color: rgba(255, 255, 255, 0.6); /* [EXTRACTED] Icon color from reference */
+
+  /* Transitions */
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Pointer Events */
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Icon state changes based on input focus */
+.arena-search-container:focus-within .arena-search-icon {
+  color: rgba(255, 107, 53, 0.8); /* [EXTRACTED] Brand color on focus */
+  transform: translateY(-50%) scale(1.1); /* [EXTRACTED] Slight scale on focus */
+}
+
+.arena-search-container:hover:not(:focus-within) .arena-search-icon {
+  color: rgba(255, 255, 255, 0.8); /* [EXTRACTED] Brighter on hover */
+  transform: translateY(-50%) scale(1.05); /* [EXTRACTED] Subtle scale on hover */
+}
+
+/* Active/Typing State */
+.arena-search-input:not(:placeholder-shown) {
+  background: rgba(255, 255, 255, 0.1); /* [EXTRACTED] Background when typing */
+  border-color: rgba(
+    255,
+    107,
+    53,
+    0.4
+  ); /* [EXTRACTED] Brand color when has content */
+}
+
+.arena-search-input:not(:placeholder-shown) + .arena-search-icon {
+  color: rgba(255, 107, 53, 0.7); /* [EXTRACTED] Brand color when has content */
+}
+
+/* Responsive Design for Search */
+@media (max-width: 640px) {
+  .arena-search-input {
+    height: 48px; /* [EXTRACTED] Smaller height on mobile */
+    padding: 0 20px 0 52px; /* [EXTRACTED] Adjusted padding for mobile */
+    font-size: 15px; /* [EXTRACTED] Slightly smaller font on mobile */
+    border-radius: 24px; /* [EXTRACTED] Adjusted border radius */
+  }
+
+  .arena-search-input::placeholder {
+    font-size: 15px; /* [EXTRACTED] Consistent placeholder size */
+  }
+
+  .arena-search-icon {
+    right: 16px; /* [EXTRACTED] Adjusted positioning for mobile */
+    width: 20px; /* [EXTRACTED] Smaller icon on mobile */
+    height: 20px; /* [EXTRACTED] */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .arena-search-input {
+    height: 52px; /* [EXTRACTED] Medium height on tablet */
+    padding: 0 22px 0 56px; /* [EXTRACTED] Medium padding */
+    border-radius: 26px; /* [EXTRACTED] Medium border radius */
+  }
+
+  .arena-search-icon {
+    right: 18px; /* [EXTRACTED] Medium positioning */
+    width: 22px; /* [EXTRACTED] Medium icon size */
+    height: 22px; /* [EXTRACTED] */
+  }
+}
+
+@media (min-width: 1024px) {
+  .arena-search-input {
+    height: 60px; /* [EXTRACTED] Larger height on desktop */
+    padding: 0 28px 0 64px; /* [EXTRACTED] More padding on desktop */
+    font-size: 17px; /* [EXTRACTED] Larger font on desktop */
+    border-radius: 30px; /* [EXTRACTED] Larger border radius */
+  }
+
+  .arena-search-input::placeholder {
+    font-size: 17px; /* [EXTRACTED] Consistent placeholder size */
+  }
+
+  .arena-search-icon {
+    right: 24px; /* [EXTRACTED] More spacing on desktop */
+    width: 26px; /* [EXTRACTED] Larger icon on desktop */
+    height: 26px; /* [EXTRACTED] */
+  }
+}
+
+/* Search Container Animation */
+.arena-search-container {
+  animation: searchFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Focused container state */
+.arena-search-container.focused {
+  transform: scale(1.02); /* [EXTRACTED] Subtle scale on focus */
+}
+
+.arena-search-container.focused .arena-search-input {
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15),
+    /* [EXTRACTED] Enhanced focus ring */ 0 12px 40px rgba(0, 0, 0, 0.2); /* [EXTRACTED] Enhanced shadow */
+}
+
+@keyframes searchFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading State for Search */
+.arena-search-input:disabled {
+  background: rgba(255, 255, 255, 0.04); /* [EXTRACTED] Disabled background */
+  border-color: rgba(255, 255, 255, 0.06); /* [EXTRACTED] Disabled border */
+  color: rgba(255, 255, 255, 0.3); /* [EXTRACTED] Disabled text */
+  cursor: not-allowed;
+}
+
+.arena-search-input:disabled + .arena-search-icon {
+  color: rgba(255, 255, 255, 0.3); /* [EXTRACTED] Disabled icon */
+}
+
+/* Search Results Dropdown (if needed in future) */
+.arena-search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: rgba(30, 30, 30, 0.95); /* [EXTRACTED] Dropdown background */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px; /* [EXTRACTED] Dropdown border radius */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3); /* [EXTRACTED] Dropdown shadow */
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.arena-search-dropdown.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Search Suggestions Styling */
+.arena-search-suggestion {
+  padding: 12px 20px; /* [EXTRACTED] Suggestion padding */
+  color: var(--arena-text-secondary);
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arena-search-suggestion:hover {
+  background: rgba(255, 107, 53, 0.1); /* [EXTRACTED] Suggestion hover */
+  color: var(--arena-text-primary);
+}
+
+.arena-search-suggestion:last-child {
+  border-bottom: none;
+  border-radius: 0 0 16px 16px;
+}
+
+.arena-search-suggestion:first-child {
+  border-radius: 16px 16px 0 0;
+}
+
+/* No Results State */
+.arena-search-no-results {
+  padding: 20px;
+  text-align: center;
+  color: var(--arena-text-muted);
+  font-size: 14px;
+}
+
+/* Search Keyboard Shortcuts */
+.arena-search-shortcut {
+  position: absolute;
+  left: 20px; /* [EXTRACTED] Shortcut positioning */
+  top: 50%;
+  transform: translateY(-50%);
+  display: none; /* Hidden by default, show on larger screens */
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arena-search-shortcut kbd {
+  background: rgba(255, 255, 255, 0.08); /* [EXTRACTED] Kbd background */
+  border: 1px solid rgba(255, 255, 255, 0.12); /* [EXTRACTED] Kbd border */
+  border-radius: 4px; /* [EXTRACTED] Small border radius */
+  padding: 4px 8px; /* [EXTRACTED] Kbd padding */
+  font-size: 11px; /* [EXTRACTED] Smaller font for kbd */
+  font-family: var(--arena-font-mono);
+  color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* [EXTRACTED] Subtle shadow */
+}
+
+.arena-search-container:focus-within .arena-search-shortcut {
+  opacity: 0; /* Hide shortcut when focused */
+}
+
+.arena-search-container:hover:not(:focus-within) .arena-search-shortcut {
+  color: rgba(255, 255, 255, 0.6); /* Brighter on hover */
+}
+
+.arena-search-container:hover:not(:focus-within) .arena-search-shortcut kbd {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 1024px) {
+  .arena-search-shortcut {
+    display: block; /* Show keyboard shortcut on desktop */
+  }
+
+  .arena-search-input {
+    padding-left: 80px; /* [EXTRACTED] More space for shortcut */
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .arena-search-input {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .arena-search-input:focus {
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  .arena-search-icon {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .arena-search-input,
+  .arena-search-icon,
+  .arena-search-container,
+  .arena-search-dropdown {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .arena-search-container {
+    display: none;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .arena-no-print {
+    display: none !important;
+  }
+}
+
+/* ===== BOOKING INTERFACE SPECIFIC STYLES ===== */
+/* Pixel-perfect booking interface styling based on reference images */
+
+.arena-booking-container {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+  min-height: 100vh;
+}
+
+.arena-booking-header {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+}
+
+.arena-booking-header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--arena-text-primary);
+  text-align: center;
+  letter-spacing: 0.025em;
+}
+
+.arena-booking-event-info {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 2rem;
+}
+
+.arena-booking-event-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--arena-text-primary);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.arena-booking-event-meta {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--arena-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arena-seat-map-container {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+  border-radius: 1rem;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5), 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.arena-seat-popup {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.95) 0%,
+    rgba(42, 42, 42, 0.95) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.arena-seat-popup-header {
+  background: linear-gradient(135deg, #ff6b35 0%, #ffd23f 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.arena-seat-popup-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.arena-seat-popup-button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.arena-seat-popup-button:hover {
+  transform: scale(1.05);
+}
+
+.arena-seat-popup-button--accept {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.arena-seat-popup-button--accept:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.arena-seat-popup-button--cancel {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);
+}
+
+.arena-seat-popup-button--cancel:hover {
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+  box-shadow: 0 6px 16px rgba(107, 114, 128, 0.4);
+}
+
+.arena-legend-container {
+  background: rgba(26, 26, 26, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 0 1rem 1rem;
+}
+
+.arena-legend-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--arena-text-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.arena-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(42, 42, 42, 0.3);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.arena-legend-item:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(42, 42, 42, 0.5);
+}
+
+.arena-legend-item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.arena-legend-item-color {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.arena-legend-item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--arena-text-primary);
+}
+
+.arena-legend-item-stats {
+  font-size: 0.75rem;
+  color: var(--arena-text-muted);
+  margin-top: 0.25rem;
+}
+
+.arena-legend-item-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--arena-text-accent);
+}
+
+.arena-legend-status-indicators {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.arena-legend-status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.arena-legend-status-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.arena-next-button-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  z-index: 50;
+}
+
+.arena-next-button-summary {
+  margin-bottom: 1.5rem;
+  max-height: 10rem;
+  overflow-y: auto;
+}
+
+.arena-next-button-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--arena-text-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.arena-next-button-seat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(26, 26, 26, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.arena-next-button-seat-info {
+  color: var(--arena-text-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.arena-next-button-seat-price {
+  color: var(--arena-text-accent);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.arena-next-button-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.arena-next-button-total {
+  text-align: right;
+}
+
+.arena-next-button-total-label {
+  font-size: 0.875rem;
+  color: var(--arena-text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.arena-next-button-total-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--arena-text-primary);
+}
+
+.arena-next-button-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-width: 200px;
+  border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.arena-next-button-cta--enabled {
+  background: linear-gradient(135deg, #ff6b35 0%, #ffd23f 100%);
+  color: white;
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+}
+
+.arena-next-button-cta--enabled:hover {
+  background: linear-gradient(135deg, #e55a2b 0%, #f7c52d 100%);
+  box-shadow: 0 12px 32px rgba(255, 107, 53, 0.4);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.arena-next-button-cta--disabled {
+  background: rgba(107, 114, 128, 0.5);
+  color: var(--arena-text-muted);
+  cursor: not-allowed;
+  border-color: rgba(107, 114, 128, 0.3);
+}
+
+.arena-zoom-controls {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.arena-zoom-button {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--arena-text-primary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.arena-zoom-button:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.arena-zoom-indicator {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--arena-text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.arena-loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0;
+}
+
+.arena-loading-content {
+  text-align: center;
+}
+
+.arena-loading-spinner {
+  position: relative;
+  margin: 0 auto 1.5rem;
+}
+
+.arena-loading-spinner-primary {
+  width: 4rem;
+  height: 4rem;
+  border: 4px solid rgba(255, 107, 53, 0.3);
+  border-top-color: #ff6b35;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.arena-loading-spinner-secondary {
+  position: absolute;
+  inset: 0;
+  width: 4rem;
+  height: 4rem;
+  border: 4px solid rgba(255, 210, 63, 0.2);
+  border-bottom-color: #ffd23f;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite reverse;
+}
+
+.arena-loading-text-primary {
+  color: var(--arena-text-secondary);
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.arena-loading-text-secondary {
+  color: var(--arena-text-muted);
+  font-size: 0.875rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments for booking interface */
+@media (max-width: 640px) {
+  .arena-booking-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .arena-booking-header-title {
+    font-size: 1.125rem;
+  }
+
+  .arena-booking-event-info {
+    padding: 1rem 1.5rem;
+  }
+
+  .arena-booking-event-title {
+    font-size: 1.25rem;
+  }
+
+  .arena-legend-container {
+    margin: 0 1rem 1rem;
+    padding: 1rem;
+  }
+
+  .arena-legend-item {
+    padding: 0.75rem;
+  }
+
+  .arena-next-button-container {
+    padding: 1rem;
+  }
+
+  .arena-next-button-footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .arena-next-button-cta {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .arena-zoom-controls {
+    bottom: 1rem;
+    right: 1rem;
+    gap: 0.5rem;
+  }
+
+  .arena-zoom-button,
+  .arena-zoom-indicator {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .arena-booking-header {
+    padding: 2rem 3rem;
+  }
+
+  .arena-booking-event-info {
+    padding: 1.5rem 3rem;
+  }
+
+  .arena-legend-container {
+    margin: 0 2rem 2rem;
+    padding: 2rem;
+  }
+
+  .arena-next-button-container {
+    padding: 2rem;
+  }
+}
+
+/* ===== CHECKOUT PAGE STYLES ===== */
+/* Pixel-perfect checkout page styling based on reference images */
+
+.arena-checkout-container {
+  min-height: 100vh;
+  background: var(--arena-bg-primary);
+  color: var(--arena-text-primary);
+  padding-bottom: 100px; /* Space for sticky payment bar */
+  font-family: var(--arena-font-primary);
+}
+
+/* Header Section */
+.arena-checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px; /* [EXTRACTED] Exact padding from reference */
+  background: var(--arena-bg-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.arena-checkout-back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* [EXTRACTED] */
+  background: transparent;
+  border: none;
+  color: var(--arena-text-primary);
+  font-size: 14px; /* [EXTRACTED] */
+  font-weight: 400;
+  cursor: pointer;
+  transition: color var(--arena-transition-fast) var(--arena-ease-out);
+}
+
+.arena-checkout-back-button:hover {
+  color: var(--arena-accent);
+}
+
+.arena-checkout-back-icon {
+  width: 16px; /* [EXTRACTED] */
+  height: 16px;
+}
+
+.arena-checkout-timer {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* [EXTRACTED] */
+  font-size: 14px; /* [EXTRACTED] */
+}
+
+.arena-checkout-timer-text {
+  color: var(--arena-text-secondary);
+  font-weight: 400;
+}
+
+.arena-checkout-timer-value {
+  color: var(--arena-text-primary);
+  font-weight: 600; /* [EXTRACTED] */
+  font-family: "JetBrains Mono", monospace; /* Monospace for timer */
+}
+
+/* Content Container */
+.arena-checkout-content {
+  max-width: 480px; /* [EXTRACTED] Max width from reference */
+  margin: 0 auto;
+  padding: 0 24px; /* [EXTRACTED] */
+}
+
+/* Event Section */
+.arena-checkout-event-section {
+  padding: 24px 0; /* [EXTRACTED] */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.arena-checkout-event-info {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* [EXTRACTED] */
+  flex-direction: row-reverse; /* RTL layout */
+}
+
+.arena-checkout-event-details {
+  flex: 1;
+  text-align: right;
+}
+
+.arena-checkout-event-title {
+  font-size: 20px; /* [EXTRACTED] */
+  font-weight: 700; /* [EXTRACTED] */
+  line-height: 1.3;
+  color: var(--arena-text-primary);
+  margin-bottom: 8px; /* [EXTRACTED] */
+}
+
+.arena-checkout-event-meta {
+  font-size: 14px; /* [EXTRACTED] */
+  font-weight: 400;
+  color: var(--arena-text-secondary);
+  line-height: 1.4;
+}
+
+.arena-checkout-event-image-container {
+  width: 80px; /* [EXTRACTED] */
+  height: 80px; /* [EXTRACTED] */
+  border-radius: 12px; /* [EXTRACTED] */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.arena-checkout-event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Section Styling */
+.arena-checkout-section {
+  padding: 32px 0; /* [EXTRACTED] */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.arena-checkout-section:last-child {
+  border-bottom: none;
+}
+
+.arena-checkout-section-title {
+  font-size: 18px; /* [EXTRACTED] */
+  font-weight: 700; /* [EXTRACTED] */
+  color: var(--arena-text-primary);
+  margin-bottom: 20px; /* [EXTRACTED] */
+  text-align: right;
+}
+
+/* Tickets Section */
+.arena-checkout-tickets-title {
+  font-size: 16px; /* [EXTRACTED] */
+  font-weight: 600; /* [EXTRACTED] */
+  color: var(--arena-text-primary);
+  margin-bottom: 16px; /* [EXTRACTED] */
+  text-align: right;
+}
+
+.arena-checkout-tickets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* [EXTRACTED] */
+}
+
+.arena-checkout-ticket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0; /* [EXTRACTED] */
+}
+
+.arena-checkout-ticket-info {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* [EXTRACTED] */
+  flex-direction: row-reverse; /* RTL layout */
+  flex: 1;
+}
+
+.arena-checkout-ticket-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; /* [EXTRACTED] */
+  height: 24px; /* [EXTRACTED] */
+  background: linear-gradient(
+    135deg,
+    #0066ff 0%,
+    #3385ff 100%
+  ); /* [EXTRACTED] */
+  border-radius: 6px; /* [EXTRACTED] */
+  color: #ffffff;
+  font-size: 12px; /* [EXTRACTED] */
+  font-weight: 700; /* [EXTRACTED] */
+  flex-shrink: 0;
+}
+
+.arena-checkout-ticket-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* [EXTRACTED] */
+  text-align: right;
+}
+
+.arena-checkout-ticket-category {
+  font-size: 14px; /* [EXTRACTED] */
+  font-weight: 500; /* [EXTRACTED] */
+  color: var(--arena-text-primary);
+  line-height: 1.2;
+}
+
+.arena-checkout-ticket-seat {
+  font-size: 12px; /* [EXTRACTED] */
+  font-weight: 400;
+  color: var(--arena-text-secondary);
+  line-height: 1.2;
+}
+
+.arena-checkout-ticket-quantity {
+  font-size: 14px; /* [EXTRACTED] */
+  font-weight: 500;
+  color: var(--arena-text-secondary);
+}
+
+/* Discount Section */
+.arena-checkout-discount {
+  margin: 24px 0; /* [EXTRACTED] */
+}
+
+.arena-checkout-discount-input-container {
+  display: flex;
+  gap: 12px; /* [EXTRACTED] */
+  align-items: center;
+  justify-content: flex-end; /* RTL alignment */
+}
+
+.arena-checkout-discount-input {
+  flex: 1;
+  max-width: 200px; /* [EXTRACTED] */
+  height: 44px; /* [EXTRACTED] */
+  padding: 0 16px; /* [EXTRACTED] */
+  background: var(--arena-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px; /* [EXTRACTED] */
+  color: var(--arena-text-primary);
+  font-size: 14px; /* [EXTRACTED] */
+  text-align: center;
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+}
+
+.arena-checkout-discount-input:focus {
+  outline: none;
+  border-color: var(--arena-primary);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.arena-checkout-discount-input::placeholder {
+  color: var(--arena-text-placeholder);
+  text-align: center;
+}
+
+.arena-checkout-discount-apply {
+  height: 44px; /* [EXTRACTED] */
+  padding: 0 20px; /* [EXTRACTED] */
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px; /* [EXTRACTED] */
+  color: var(--arena-text-secondary);
+  font-size: 14px; /* [EXTRACTED] */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+}
+
+.arena-checkout-discount-apply:hover {
+  border-color: var(--arena-primary);
+  color: var(--arena-primary);
+}
+
+/* Total Section */
+.arena-checkout-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0; /* [EXTRACTED] */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 24px; /* [EXTRACTED] */
+}
+
+.arena-checkout-total-label {
+  font-size: 18px; /* [EXTRACTED] */
+  font-weight: 700; /* [EXTRACTED] */
+  color: var(--arena-text-primary);
+}
+
+.arena-checkout-total-amount {
+  font-size: 18px; /* [EXTRACTED] */
+  font-weight: 700; /* [EXTRACTED] */
+  color: var(--arena-text-primary);
+}
+
+/* Payment Method Section */
+.arena-checkout-payment-subtitle {
+  font-size: 14px; /* [EXTRACTED] */
+  color: var(--arena-text-secondary);
+  margin-bottom: 24px; /* [EXTRACTED] */
+  text-align: right;
+}
+
+.arena-checkout-payment-methods {
+  margin-bottom: 24px; /* [EXTRACTED] */
+}
+
+.arena-checkout-payment-option {
+  border: 2px solid rgba(255, 255, 255, 0.12); /* [EXTRACTED] */
+  border-radius: 12px; /* [EXTRACTED] */
+  padding: 20px; /* [EXTRACTED] */
+  cursor: pointer;
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+  background: var(--arena-bg-secondary);
+}
+
+.arena-checkout-payment-option:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.arena-checkout-payment-option--selected {
+  border-color: var(--arena-primary); /* [EXTRACTED] */
+  background: rgba(0, 102, 255, 0.05); /* [EXTRACTED] */
+}
+
+.arena-checkout-payment-option-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arena-checkout-payment-option-info {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* [EXTRACTED] */
+  flex-direction: row-reverse; /* RTL layout */
+}
+
+.arena-checkout-payment-icon {
+  width: 24px; /* [EXTRACTED] */
+  height: 24px; /* [EXTRACTED] */
+  flex-shrink: 0;
+}
+
+.arena-checkout-card-icon {
+  width: 100%;
+  height: 100%;
+  color: var(--arena-text-primary);
+}
+
+.arena-checkout-payment-label {
+  font-size: 16px; /* [EXTRACTED] */
+  font-weight: 500; /* [EXTRACTED] */
+  color: var(--arena-text-primary);
+}
+
+.arena-checkout-radio-container {
+  display: flex;
+  align-items: center;
+}
+
+.arena-checkout-radio {
+  width: 20px; /* [EXTRACTED] */
+  height: 20px; /* [EXTRACTED] */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+}
+
+.arena-checkout-radio--selected {
+  border-color: var(--arena-primary);
+}
+
+.arena-checkout-radio-dot {
+  width: 8px; /* [EXTRACTED] */
+  height: 8px; /* [EXTRACTED] */
+  border-radius: 50%;
+  background: var(--arena-primary);
+  opacity: 0;
+  transform: scale(0);
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+}
+
+.arena-checkout-radio--selected .arena-checkout-radio-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Security Badge */
+.arena-checkout-security {
+  text-align: center;
+  margin: 20px 0; /* [EXTRACTED] */
+}
+
+.arena-checkout-security-text {
+  font-size: 14px; /* [EXTRACTED] */
+  color: var(--arena-text-secondary);
+  font-weight: 400;
+}
+
+/* Payment Icons */
+.arena-checkout-payment-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; /* [EXTRACTED] */
+  margin-top: 20px; /* [EXTRACTED] */
+}
+
+.arena-checkout-payment-icon {
+  height: 32px; /* [EXTRACTED] */
+  width: auto;
+  opacity: 0.8;
+  transition: opacity var(--arena-transition-fast) var(--arena-ease-out);
+}
+
+.arena-checkout-payment-icon:hover {
+  opacity: 1;
+}
+
+/* Terms and Conditions */
+.arena-checkout-terms {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* [EXTRACTED] */
+}
+
+.arena-checkout-checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px; /* [EXTRACTED] */
+  cursor: pointer;
+  flex-direction: row-reverse; /* RTL layout */
+}
+
+.arena-checkout-checkbox {
+  display: none; /* Hide native checkbox */
+}
+
+.arena-checkout-checkbox-custom {
+  width: 20px; /* [EXTRACTED] */
+  height: 20px; /* [EXTRACTED] */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px; /* [EXTRACTED] */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+  margin-top: 2px; /* Align with text */
+}
+
+.arena-checkout-checkbox:checked + .arena-checkout-checkbox-custom {
+  background: var(--arena-primary);
+  border-color: var(--arena-primary);
+}
+
+.arena-checkout-checkbox-check {
+  width: 12px; /* [EXTRACTED] */
+  height: 12px; /* [EXTRACTED] */
+  color: #ffffff;
+  opacity: 0;
+  transform: scale(0);
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+}
+
+.arena-checkout-checkbox:checked
+  + .arena-checkout-checkbox-custom
+  .arena-checkout-checkbox-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.arena-checkout-checkbox-text {
+  font-size: 14px; /* [EXTRACTED] */
+  line-height: 1.5; /* [EXTRACTED] */
+  color: var(--arena-text-primary);
+  text-align: right;
+  flex: 1;
+}
+
+.arena-checkout-checkbox-text--small {
+  font-size: 12px; /* [EXTRACTED] */
+  line-height: 1.6; /* [EXTRACTED] */
+  color: var(--arena-text-secondary);
+}
+
+.arena-checkout-link {
+  color: var(--arena-primary);
+  text-decoration: underline;
+  transition: color var(--arena-transition-fast) var(--arena-ease-out);
+}
+
+.arena-checkout-link:hover {
+  color: var(--arena-primary-light);
+}
+
+/* Sticky Payment Bar */
+.arena-checkout-payment-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--arena-bg-primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 24px; /* [EXTRACTED] */
+  z-index: var(--arena-z-fixed);
+  backdrop-filter: blur(8px);
+}
+
+.arena-checkout-payment-bar-content {
+  max-width: 480px; /* [EXTRACTED] Match content width */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* [EXTRACTED] */
+}
+
+.arena-checkout-payment-bar-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* RTL alignment */
+}
+
+.arena-checkout-payment-bar-amount {
+  font-size: 20px; /* [EXTRACTED] */
+  font-weight: 700; /* [EXTRACTED] */
+  color: var(--arena-text-primary);
+  line-height: 1.2;
+}
+
+.arena-checkout-payment-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* [EXTRACTED] */
+  padding: 16px 32px; /* [EXTRACTED] */
+  background: linear-gradient(
+    135deg,
+    var(--arena-primary) 0%,
+    var(--arena-primary-light) 100%
+  );
+  border: none;
+  border-radius: 12px; /* [EXTRACTED] */
+  color: #ffffff;
+  font-size: 16px; /* [EXTRACTED] */
+  font-weight: 600; /* [EXTRACTED] */
+  cursor: pointer;
+  transition: all var(--arena-transition-normal) var(--arena-ease-out);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3); /* [EXTRACTED] */
+  min-width: 180px; /* [EXTRACTED] */
+}
+
+.arena-checkout-payment-button:hover:not(
+    .arena-checkout-payment-button--disabled
+  ) {
+  background: linear-gradient(
+    135deg,
+    var(--arena-primary-hover) 0%,
+    var(--arena-primary) 100%
+  );
+  box-shadow: 0 6px 16px rgba(0, 102, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.arena-checkout-payment-button--disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.arena-checkout-payment-button-icon {
+  width: 18px; /* [EXTRACTED] */
+  height: 18px; /* [EXTRACTED] */
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .arena-checkout-header {
+    padding: 16px 20px; /* [EXTRACTED] Reduced padding on mobile */
+  }
+
+  .arena-checkout-content {
+    padding: 0 20px; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-event-section {
+    padding: 20px 0; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-event-info {
+    gap: 12px; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-event-image-container {
+    width: 64px; /* [EXTRACTED] Smaller image on mobile */
+    height: 64px;
+  }
+
+  .arena-checkout-event-title {
+    font-size: 18px; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-section {
+    padding: 24px 0; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-section-title {
+    font-size: 16px; /* [EXTRACTED] */
+    margin-bottom: 16px;
+  }
+
+  .arena-checkout-payment-option {
+    padding: 16px; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-payment-bar {
+    padding: 16px 20px; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-payment-bar-content {
+    gap: 16px; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-payment-bar-amount {
+    font-size: 18px; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-payment-button {
+    padding: 14px 24px; /* [EXTRACTED] */
+    font-size: 15px; /* [EXTRACTED] */
+    min-width: 160px; /* [EXTRACTED] */
+  }
+
+  .arena-checkout-discount-input-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .arena-checkout-discount-input {
+    max-width: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .arena-checkout-content {
+    max-width: 520px; /* [EXTRACTED] Slightly wider on tablet */
+  }
+
+  .arena-checkout-payment-bar-content {
+    max-width: 520px;
+  }
+}
+
+/* Loading States */
+.arena-checkout-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: var(--arena-text-secondary);
+}
+
+/* Error States */
+.arena-checkout-error {
+  padding: 20px;
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: 8px;
+  color: #ff6b6b;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Success States */
+.arena-checkout-success {
+  padding: 20px;
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+  border-radius: 8px;
+  color: #51cf66;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Focus States for Accessibility */
+.arena-checkout-back-button:focus-visible,
+.arena-checkout-discount-apply:focus-visible,
+.arena-checkout-payment-button:focus-visible {
+  outline: 2px solid var(--arena-primary);
+  outline-offset: 2px;
+}
+
+.arena-checkout-payment-option:focus-visible {
+  outline: 2px solid var(--arena-primary);
+  outline-offset: 2px;
+}
+
+/* Animation for smooth transitions */
+.arena-checkout-payment-option,
+.arena-checkout-checkbox-custom,
+.arena-checkout-radio {
+  will-change: transform, background-color, border-color;
+}
+
+/* Ensure proper RTL text alignment */
+.arena-checkout-container * {
+  text-align: inherit;
+}
+
+.arena-checkout-container input[type="text"] {
+  direction: rtl;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .arena-checkout-payment-option {
+    border-width: 3px;
+  }
+
+  .arena-checkout-checkbox-custom {
+    border-width: 3px;
+  }
+
+  .arena-checkout-radio {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .arena-checkout-payment-button,
+  .arena-checkout-payment-option,
+  .arena-checkout-checkbox-custom,
+  .arena-checkout-radio,
+  .arena-checkout-discount-input {
+    transition: none;
+  }
+}
