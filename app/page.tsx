@@ -274,7 +274,7 @@ export default function HomePage() {
           href="/admin/login"
           className="bg-gray-100/10 text-gray-800 px-1 py-1 rounded-lg text-sm backdrop-blur-sm shadow-sm"
         >
-          Admin
+          
         </Link>
       </div>
     </div>
