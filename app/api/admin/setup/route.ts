@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/db'
 
-export async function POST() {
+export async function POST(request: NextRequest) {
     try {
         console.log('🔧 Setting up admin user...')
         console.log('🔗 DATABASE_URL:', process.env.DATABASE_URL)
@@ -9,6 +9,19 @@ export async function POST() {
         if (!prisma) {
             console.error('❌ Prisma client not available')
             return NextResponse.json({ error: 'Database connection not available' }, { status: 500 })
+        }
+
+        // Get custom credentials from request body (optional)
+        let username = 'admin'
+        let password = 'admin123'
+        
+        try {
+            const body = await request.json()
+            if (body.username) username = body.username
+            if (body.password) password = body.password
+        } catch (e) {
+            // If no body or invalid JSON, use defaults
+            console.log('Using default credentials')
         }
 
         // Check if admin already exists
@@ -22,11 +35,11 @@ export async function POST() {
             })
         }
 
-        // Create default admin user
+        // Create admin user with provided or default credentials
         const admin = await prisma.admin.create({
             data: {
-                username: 'admin',
-                password: 'admin123' // في الإنتاج، استخدم كلمة مرور مشفرة
+                username: username,
+                password: password // في الإنتاج، استخدم كلمة مرور مشفرة
             }
         })
 
@@ -35,7 +48,7 @@ export async function POST() {
         return NextResponse.json({
             message: 'Admin user created successfully',
             username: admin.username,
-            note: 'Default password is: admin123'
+            note: `Password is: ${password}`
         })
 
     } catch (error) {
