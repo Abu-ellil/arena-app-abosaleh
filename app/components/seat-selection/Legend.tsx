@@ -4,15 +4,44 @@ import { useSeatStore } from "@/lib/seat-store";
 import { useCurrency } from "../CurrencyProvider";
 
 const categoryInfo = {
-  VVIP: { color: "bg-purple-500", icon: "●", name: "VVIP", nameAr: "كراسي ارضية" },
-  VIP: { color: "bg-red-500", icon: "●", name: "VIP", nameAr: "كراسي ارضية" },
-  Royal: { color: "bg-green-500", icon: "●", name: "Royal", nameAr: "كراسي ارضية" },
-  Diamond: { color: "bg-blue-500", icon: "●", name: "Diamond", nameAr: "كراسي ارضية" },
-  Platinum: { color: "bg-purple-400", icon: "●", name: "Platinum", nameAr: "كراسي مدرجات" },
+  VVIP: { color: "bg-purple-600", icon: "●", name: "VVIP", nameAr: "كراسي ارضية" },
+  VIP: { color: "bg-pink-600", icon: "●", name: "VIP", nameAr: "كراسي ارضية" },
+  Royal: { color: "bg-green-600", icon: "●", name: "Royal", nameAr: "كراسي ارضية" },
+  Diamond: { color: "bg-cyan-500", icon: "●", name: "Diamond", nameAr: "كراسي ارضية" },
+  Platinum: { color: "bg-white", icon: "●", name: "Platinum", nameAr: "كراسي مدرجات" },
   Gold: { color: "bg-yellow-500", icon: "●", name: "Gold", nameAr: "كراسي ارضية" },
   Silver: { color: "bg-gray-400", icon: "●", name: "Silver", nameAr: "كراسي أساسية" },
   Bronze: { color: "bg-orange-500", icon: "●", name: "Bronze", nameAr: "كراسي مميزات" },
 };
+
+
+
+
+const colors = {
+    VVIP: "#9333ea", // Purple (bg-purple-600)
+    VIP: "#db2777", // Pink (bg-pink-600)
+    Royal: "#16a34a", // Green (bg-green-600)
+    Diamond: "#0891b2", // Cyan (bg-cyan-600)
+    Platinum: "#6b7280", // Gray (bg-gray-500)
+    "Gold A": "#ca8a04", // Yellow (bg-yellow-600)
+    "Gold B": "#ca8a04", // Yellow (bg-yellow-600)
+    Gold: "#ca8a04", // Yellow (bg-yellow-600)
+    "Silver A": "#9ca3af", // Gray (bg-gray-400)
+    "Silver B": "#9ca3af", // Gray (bg-gray-400)
+    Silver: "#9ca3af", // Gray (bg-gray-400)
+    Bronze: "#ea580c", // Orange (bg-orange-600)
+  };
+
+
+
+
+
+
+
+
+
+
+
 
 export default function Legend() {
   const { seats } = useSeatStore();

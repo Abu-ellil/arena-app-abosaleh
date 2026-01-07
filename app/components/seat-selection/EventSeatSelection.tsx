@@ -108,7 +108,7 @@ function getCategoryColor(category: string): string {
     VIP: "bg-red-500",
     Royal: "bg-green-500",
     Diamond: "bg-cyan-400",
-    Platinum: "bg-purple-500",
+    Platinum: "bg-white",
     Gold: "bg-yellow-500",
     Silver: "bg-gray-400",
     Bronze: "bg-orange-500",

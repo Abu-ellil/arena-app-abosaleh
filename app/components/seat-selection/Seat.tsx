@@ -30,7 +30,7 @@ const seatColors = {
     booked: "bg-gray-600",
   },
   Platinum: {
-    available: "bg-purple-500 hover:bg-purple-400", // Purple
+    available: "bg-white hover:bg-purple-400", // Purple
     selected: "bg-gray-800 ring-2 ring-gray-600",
     booked: "bg-gray-600",
   },

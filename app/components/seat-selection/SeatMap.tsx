@@ -13,16 +13,12 @@ import {
 // Helper function to get seat category background color
 const getSeatCategoryColor = (category: string) => {
   const colors = {
-    VVIP: "#9333ea", // Purple (bg-purple-600)
+    VVIP: "#9333a3", // Purple (bg-purple-600)
     VIP: "#db2777", // Pink (bg-pink-600)
     Royal: "#16a34a", // Green (bg-green-600)
     Diamond: "#0891b2", // Cyan (bg-cyan-600)
-    Platinum: "#6b7280", // Gray (bg-gray-500)
-    "Gold A": "#ca8a04", // Yellow (bg-yellow-600)
-    "Gold B": "#ca8a04", // Yellow (bg-yellow-600)
+    Platinum: "#fff", // Gray (bg-gray-500)
     Gold: "#ca8a04", // Yellow (bg-yellow-600)
-    "Silver A": "#9ca3af", // Gray (bg-gray-400)
-    "Silver B": "#9ca3af", // Gray (bg-gray-400)
     Silver: "#9ca3af", // Gray (bg-gray-400)
     Bronze: "#ea580c", // Orange (bg-orange-600)
   };
