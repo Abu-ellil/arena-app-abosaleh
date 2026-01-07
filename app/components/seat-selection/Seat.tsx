@@ -10,7 +10,7 @@ interface SeatProps {
 
 const seatColors = {
   VVIP: {
-    available: "bg-pink-400 hover:bg-pink-600", // Pink/Magenta
+    available: "bg-purple-500 hover:bg-purple-600", // Pink/Magenta
     selected: "bg-gray-800 ring-2 ring-gray-600",
     booked: "bg-gray-600",
   },
