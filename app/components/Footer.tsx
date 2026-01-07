@@ -11,6 +11,7 @@ export default function Footer() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const { settings } = useSettings();
+  const currentYear = new Date().getFullYear();
   
   // Use settings whatsappNumber or fallback to default
   const whatsappNumber = settings.whatsappNumber || "+96512345678";
@@ -72,7 +73,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className=" py-4 text-center">
           <p className="text-sm text-gray-400">
-            © الأرينا كويت 2025. جميع الحقوق محفوظة
+            © الأرينا كويت {currentYear}. جميع الحقوق محفوظة
           </p>
         </div>
       </div>
